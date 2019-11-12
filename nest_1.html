@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js" xmlns:v-on="http://www.w3.org/1999/xhtml"></script>
+<div id="app" class="anyclass">
+  <ul>
+    <li v-for="(day,i) in weekDays" v-on:click="handleClick(i)">{{day}}</li>
+  </ul>
+  <p> Inndex clicked {{ clickedIndex }}</p>
+</div>
+
+<script>new Vue({
+  el: '#app',
+  data: {
+    clickedIndex: null,
+    weekDays: ['monday', 'tuesdayy', 'wednesday', 'thursday', 'fridayy']
+  },
+  methods: {
+    handleClick(i) {
+      this.clickedIndex = i;
+    }
+  }
+})
+
+Vue.config.productionTip = false;
+Vue.config.devtools = false;
+</script>
